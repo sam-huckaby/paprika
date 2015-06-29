@@ -1,0 +1,39 @@
+<ion-view view-title="Lists"> 
+<!-- Navigation button on top right -->  
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios-plus-outline"
+            ng-click='createList()'></button>
+  </ion-nav-buttons>
+  <!-- Actual page contents of the main 'paprika.lists' route -->
+  <ion-content>
+    <ion-list show-delete='shouldShowDelete'
+              show-reorder='shouldShowReorder'
+              can-swipe='listCanSwipe'
+              delegate-handle='listsList'>
+      <ion-item ng-repeat="list in lists track by list._id"
+                ng-click='viewList(list)'
+                class='list-item'>
+        <h2>{{list.title}}</h2>
+        <!--
+        <ion-option-button class="button-positive"
+                           ng-click="share(list)">
+          Share
+        </ion-option-button>
+        -->
+        <!-- TODO: Buttons need real colors that don't look dumb -->
+        <ion-option-button class="button-positive icon ion-ios-compose-outline"
+                           ng-click="editList(list)">
+        </ion-option-button>
+        <ion-option-button class="button-assertive icon ion-ios-trash-outline"
+                           ng-click="deleteList(list)">
+        </ion-option-button>
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="deleteList(list)">
+        </ion-delete-button>
+        <ion-reorder-button class="ion-navicon"
+                            on-reorder="reorderList(list, $fromIndex, $toIndex)">
+        </ion-reorder-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

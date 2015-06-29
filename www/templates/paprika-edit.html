@@ -1,0 +1,26 @@
+<ion-view view-title="Edit">
+  <!-- Navigation buttons on top left and right --> 
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-ios-minus-outline" ng-click="toggleDelete()"></button>
+  </ion-nav-buttons>
+  <!-- Actual page contents of the main 'paprika.lists.edit' route -->
+  
+  <ion-content class='list paprika-list' on-swipe-down='addItem()'>
+    <div class="row item item-input item-select" ng-repeat="item in list.items">
+      <div class="col-50">
+        <input type='text' ng-model='item.name' placeholder='Item Name'>
+      </div>
+      <div class="col-25">
+        <!-- <input class='edit-quantity' type='number' min='1' step='1'> -->
+        <label class="">
+          <input class='edit-quantity' ng-model='item.quantity' placeholder='#' type='number' min='1' step='1'>
+        </label>
+      </div>
+      <div class="col-25">
+        <label class="">
+          <select ng-options="quantity.name for quantity in quantities | orderBy:'quantity.name'" ng-model="item.type"></select>
+        </label>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

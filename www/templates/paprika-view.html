@@ -1,0 +1,8 @@
+<ion-view view-title="{{list.title}}">
+  <!-- Actual page contents of the main 'paprika.lists' route -->
+  <ion-content>
+        <ion-checkbox ng-repeat="item in list.items" ng-model="item.collected" ng-checked="item.collected">
+        	<span ng-class='{collected: item.collected}'>{{item.name}}</span>
+    	</ion-checkbox>
+  </ion-content>
+</ion-view>

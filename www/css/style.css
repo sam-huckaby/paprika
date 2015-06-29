@@ -1,0 +1,32 @@
+/* Empty. Add your own CSS if you like */
+.collected {
+	text-decoration: line-through;
+	color: gray;
+}
+
+.edit-quantity {
+	width: 100%;
+}
+
+.paprika-list .item {
+	height: 50px;
+}
+
+/* Let's animate some things!!! */
+/* Add animation */
+.list-item.ng-enter.ng-enter-active, 
+.list-item.ng-leave {
+    opacity: 1;
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}
+
+/* Remove animation */
+.list-item.ng-leave.ng-leave-active, 
+.list-item.ng-enter {
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}
