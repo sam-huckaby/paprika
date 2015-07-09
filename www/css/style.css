@@ -1,15 +1,16 @@
-/* Empty. Add your own CSS if you like */
+/* Styles for viewing a list */
 .collected {
 	text-decoration: line-through;
 	color: gray;
 }
 
-.edit-quantity {
-	width: 100%;
+.paprika-list .item {
+        height: 50px;
 }
 
-.paprika-list .item {
-	height: 50px;
+/* Styles for editing a list */
+.edit-quantity {
+	width: 100%;
 }
 
 /* Let's animate some things!!! */
